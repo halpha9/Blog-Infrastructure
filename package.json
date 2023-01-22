@@ -8,21 +8,29 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "pre:deploy": "npm run build",
+    "destroy": "env-cmd -f .env cdk destroy --all --profile=Harry",
+    "deploy": "npm run pre:deploy && env-cmd -f .env cdk deploy --all --profile=Harry"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.20.0",
     "@types/jest": "^27.5.2",
     "@types/node": "10.17.27",
     "@types/prettier": "2.6.0",
+    "aws-cdk": "2.47.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
-    "aws-cdk": "2.47.0",
     "ts-node": "^10.9.1",
-    "typescript": "~3.9.7"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@aws-cdk/aws-elasticbeanstalk": "^1.189.0",
+    "@aws-cdk/aws-rds": "^1.189.0",
+    "@aws-cdk/aws-secretsmanager": "^1.189.0",
     "aws-cdk-lib": "2.47.0",
     "constructs": "^10.0.0",
+    "env-cmd": "^10.1.0",
     "source-map-support": "^0.5.21"
   }
 }

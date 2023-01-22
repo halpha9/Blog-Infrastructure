@@ -1,0 +1,11 @@
+{
+  "availability-zones:account=398627940113:region=eu-west-2": [
+    "eu-west-2a",
+    "eu-west-2b",
+    "eu-west-2c"
+  ],
+  "hosted-zone:account=398627940113:domainName=blog-api.harryalpha.com:region=eu-west-2": {
+    "Id": "/hostedzone/Z07436492LH6EYSCAICYX",
+    "Name": "blog-api.harryalpha.com."
+  }
+}
